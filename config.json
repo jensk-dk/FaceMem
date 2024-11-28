@@ -1,0 +1,40 @@
+{
+    "defaultSize": {
+        "rows": 4,
+        "cols": 4
+    },
+    "pairs": [
+        {
+            "name": "Emma Thompson",
+            "portrait": "https://images.generated.photos/tGwHoVG5m3bCFBXGLdwXAqwBBhbYv8V1fp7FX6a9g0Q/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjM5MjI3LmpwZw.jpg"
+        },
+        {
+            "name": "James Wilson",
+            "portrait": "https://images.generated.photos/qgFrBXzGFG1ZGzfEUtL8yGk0GsFOCxCnwPrRh2_JGsE/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NDg3MjQ4LmpwZw.jpg"
+        },
+        {
+            "name": "Sarah Chen",
+            "portrait": "https://images.generated.photos/Zf1AjEb6IoE5OrstpJVVPMGT8vD_Salt0gf7tqhGPBg/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NjY4NDQ5LmpwZw.jpg"
+        },
+        {
+            "name": "Michael Brown",
+            "portrait": "https://images.generated.photos/GkFBtT-3G0XK8P93WRVsS0XtXYyoJrpwz5GUvHh5j6w/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NzE5OTQ5LmpwZw.jpg"
+        },
+        {
+            "name": "Lisa Garcia",
+            "portrait": "https://images.generated.photos/lEhPUYYbBwvp5F-M4KhAqc4HCPDWy_cNXlgUYcpB_bU/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODkxNjI5LmpwZw.jpg"
+        },
+        {
+            "name": "David Kim",
+            "portrait": "https://images.generated.photos/7Eqyj6nxDQF7RFqgSPgbsqp5-164egD5csYQXqRVbRA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTI0ODc5LmpwZw.jpg"
+        },
+        {
+            "name": "Rachel Martinez",
+            "portrait": "https://images.generated.photos/ggVOXqWcO2JrxGvXz9UBLEqpzQRXkrHMGVCwZvZKxJI/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTY3ODc5LmpwZw.jpg"
+        },
+        {
+            "name": "Thomas Lee",
+            "portrait": "https://images.generated.photos/Xb4gvMz1jQnUA1U1tDbKs_hnll7UrzGpWxkXmtRqxUE/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTk5MjM5LmpwZw.jpg"
+        }
+    ]
+}
