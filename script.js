@@ -58,8 +58,18 @@ class MemoryGame {
         gameBoard.innerHTML = '';
 
         const selectedPairs = this.getRandomPairs((rows * cols) / 2);
-        const cards = [...selectedPairs, ...selectedPairs]
-            .sort(() => Math.random() - 0.5);
+        const cards = [];
+        
+        // Create name and portrait cards for each pair
+        selectedPairs.forEach(pair => {
+            cards.push(
+                { type: 'name', name: pair.name, id: pair.name },
+                { type: 'portrait', portrait: pair.portrait, name: pair.name, id: pair.name }
+            );
+        });
+
+        // Shuffle all cards
+        cards.sort(() => Math.random() - 0.5);
 
         cards.forEach((card, index) => {
             const cardElement = this.createCardElement(card, index);
@@ -77,15 +87,26 @@ class MemoryGame {
     createCardElement(card, index) {
         const cardElement = document.createElement('div');
         cardElement.className = 'card';
-        cardElement.innerHTML = `
-            <div class="card-front">?</div>
-            <div class="card-back">
-                <img src="${card.portrait}" alt="${card.name}">
-                <div class="name">${card.name}</div>
-            </div>
-        `;
+        
+        if (card.type === 'name') {
+            cardElement.innerHTML = `
+                <div class="card-front">?</div>
+                <div class="card-back name-card">
+                    <div class="name">${card.name}</div>
+                </div>
+            `;
+        } else {
+            cardElement.innerHTML = `
+                <div class="card-front">?</div>
+                <div class="card-back portrait-card">
+                    <img src="${card.portrait}" alt="Portrait">
+                </div>
+            `;
+        }
+        
         cardElement.dataset.index = index;
-        cardElement.dataset.name = card.name;
+        cardElement.dataset.id = card.id;
+        cardElement.dataset.type = card.type;
         
         cardElement.addEventListener('click', () => this.flipCard(cardElement));
         return cardElement;
@@ -108,7 +129,8 @@ class MemoryGame {
 
     checkMatch() {
         const [card1, card2] = this.flippedCards;
-        const match = card1.dataset.name === card2.dataset.name;
+        const match = card1.dataset.id === card2.dataset.id && 
+                     card1.dataset.type !== card2.dataset.type;
 
         setTimeout(() => {
             if (match) {

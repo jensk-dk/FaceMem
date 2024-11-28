@@ -101,17 +101,26 @@ body {
     border: 2px solid #ddd;
 }
 
-.card-back img {
-    width: 80%;
+.card-back.portrait-card img {
+    width: 90%;
     height: auto;
     border-radius: 4px;
-    margin-bottom: 10px;
 }
 
-.card-back .name {
+.card-back.name-card {
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.card-back.name-card .name {
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: bold;
     word-break: break-word;
+    color: #2c3e50;
 }
 
 .turn-indicator {
