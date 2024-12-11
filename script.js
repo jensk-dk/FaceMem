@@ -18,6 +18,9 @@ class MemoryGame {
         try {
             const response = await fetch('config.json');
             this.config = await response.json();
+            // Set default size from config
+            document.getElementById('rows').value = this.config.defaultSize.rows;
+            document.getElementById('cols').value = this.config.defaultSize.cols;
         } catch (error) {
             console.error('Error loading config:', error);
         }

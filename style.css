@@ -14,9 +14,13 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: min(95vh, 1200px);
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .controls {
@@ -58,7 +62,8 @@ body {
     display: grid;
     gap: 10px;
     margin: 0 auto;
-    max-width: 800px;
+    width: 100%;
+    aspect-ratio: 1;
 }
 
 .card {
