@@ -1,0 +1,15 @@
+{
+  "name": "facemem",
+  "version": "1.0.0",
+  "description": "A memory card game for memorizing faces and names",
+  "main": "script.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1"
+  }
+}
