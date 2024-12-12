@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game Tests</title>
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+</head>
+<body>
+    <div id="mocha"></div>
+    <div id="testContainer" style="visibility: hidden; position: absolute;">
+        <div class="controls">
+            <input type="number" id="rows" min="2" max="6" value="4">
+            <input type="number" id="cols" min="2" max="6" value="4">
+            <button id="newGame">New Game</button>
+        </div>
+        <div id="gameBoard" class="game-board"></div>
+    </div>
+
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+
+    <script class="mocha-init">
+        mocha.setup('bdd');
+        mocha.checkLeaks();
+    </script>
+
+    <script src="script.js"></script>
+    <script>
+        const expect = chai.expect;
+
+        describe('MemoryGame', () => {
+            let game;
+
+            beforeEach(() => {
+                game = new MemoryGame();
+            });
+
+            it('should load default size from config.json', async () => {
+                await new Promise(resolve => setTimeout(resolve, 100)); // Wait for config to load
+                const rows = parseInt(document.getElementById('rows').value);
+                const cols = parseInt(document.getElementById('cols').value);
+                expect(rows).to.equal(4); // Default from config.json
+                expect(cols).to.equal(4); // Default from config.json
+            });
+
+            it('should create correct grid size', async () => {
+                await new Promise(resolve => setTimeout(resolve, 100)); // Wait for config to load
+                const gameBoard = document.getElementById('gameBoard');
+                const computedStyle = window.getComputedStyle(gameBoard);
+                expect(computedStyle.display).to.equal('grid');
+                expect(computedStyle.gridTemplateColumns.split(' ').length).to.equal(4); // Default columns
+            });
+
+            it('should handle 6x6 grid', async () => {
+                await new Promise(resolve => setTimeout(resolve, 100)); // Wait for config to load
+                document.getElementById('rows').value = 6;
+                document.getElementById('cols').value = 6;
+                document.getElementById('newGame').click();
+                const gameBoard = document.getElementById('gameBoard');
+                const cards = gameBoard.children;
+                expect(cards.length).to.equal(36); // 6x6 grid
+            });
+
+            it('should maintain card aspect ratio', async () => {
+                await new Promise(resolve => setTimeout(resolve, 100)); // Wait for config to load
+                const card = document.querySelector('.card');
+                const computedStyle = window.getComputedStyle(card);
+                expect(computedStyle.aspectRatio).to.equal('0.75'); // 3/4 aspect ratio
+            });
+        });
+
+        mocha.run();
+    </script>
+</body>
+</html>
