@@ -7,25 +7,31 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    min-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .container {
     width: 100%;
+    height: 100%;
     max-width: min(95vh * 1.25, 1200px);
+    max-height: 100vh;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .controls {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .score {
@@ -60,20 +66,23 @@ body {
 
 .game-board {
     display: grid;
-    gap: 10px;
+    gap: 5px;
     margin: 0 auto;
     width: 100%;
+    flex: 1;
+    min-height: 0;
     aspect-ratio: 5/4;
 }
 
 .card {
     aspect-ratio: 3/4;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
     transition: transform 0.6s;
     transform-style: preserve-3d;
     position: relative;
+    font-size: min(2vw, 16px);
 }
 
 .card.flipped {
